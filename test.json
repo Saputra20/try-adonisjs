@@ -1,0 +1,136 @@
+users: {
+    name : string,
+    role : string,
+    username : string,
+    password : string,
+    region: string,
+    regions: [
+        {
+            name : string,
+
+        },
+        {
+            name : string
+        }
+    ]
+
+}
+
+regions: {
+    inital : string | unique,
+    name : string | unique,
+    base_url: string,
+    tax_rates : [
+        {
+            _id : objectId,
+            name : string,
+            type : string,
+            percentage: integer
+        },
+        {
+            _id : objectId,
+            name : string,
+            type : string,
+            percentage: integer
+        }
+    ],
+    service_rate: integer, 
+}
+
+tax_category: {
+    name : string,
+    type : string,
+    percentage : integer
+}
+
+tax_rates: {
+    region : string , 
+    tax_categories : [
+        {
+            _id : objectId,
+            name: string,
+            type: string,
+            percentage: integer
+        },
+        {
+            _id : objectId,
+            name: string,
+            type: string,
+            percentage: integer
+        }
+    ]
+}
+
+service_rates: {
+    region: string,
+    percentage: integer
+}
+
+merchants: {
+    name: string,
+    tax_category: string,
+    type: string,
+    percentage: integer,
+    daily_open: string,
+    daily_close: string,
+    nop: string,
+    address: string,
+    region: string,
+    contact: string,
+    email: string,
+    lattitude: string,
+    longitude: string,
+    status: integer,
+    created_at: datetime,
+    updaterd_at: datetime
+}
+
+devices: {
+    name: string,
+    kode: string,
+    pmt: string,
+    merchant: {
+        _id: objectId,
+        nop: string,
+        name: string,
+        region: string,
+    },
+    status: integer
+}
+
+or 
+
+merchants:{
+    name: string,
+    tax_category: string,
+    type: string,
+    percentage: integer,
+    daily_open: string,
+    daily_close: string,
+    nop: string,
+    address: string,
+    region: string,
+    contact: string,
+    email: string,
+    lattitude: string,
+    longitude: string,
+    status: integer,
+    created_at: datetime,
+    updaterd_at: datetime,
+    devices: [
+        {
+            name: string,
+            kode: string,
+            pmt: string, 
+        },
+        {
+            name: string,
+            kode: string,
+            pmt: string, 
+        }
+    ]
+}
+
+register_logs: {
+    
+}
